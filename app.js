@@ -1,13 +1,23 @@
-function greet () {
-    console.log("TESXT")
-}
+var arr =[];
 
-greet();
+arr.push(function () {
+    console.log('function 1');
+});
 
-function logGreet(fn){
-    fn();
-}
+arr.push(function () {
+    console.log('function 2');
+});
 
-logGreet(greet);
+arr.push(function () {
+    console.log('function 3');
+});
 
-logGreet(function(){console.log("how it goes")});
+arr.forEach(
+    function(item) {
+        item();
+    }
+);
+
+
+
+
