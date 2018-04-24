@@ -1,22 +1,16 @@
-var arr =[];
+var test = require('./emmiter');
 
-arr.push(function () {
-    console.log('function 1');
-});
 
-arr.push(function () {
-    console.log('function 2');
-});
+var emit = new test();
 
-arr.push(function () {
-    console.log('function 3');
-});
+emit.on('launch',function (){
+    console.log ('first call');
+})
 
-arr.forEach(
-    function(item) {
-        item();
-    }
-);
+emit.on('launch', ()=> {console.log('second call')});
+emit.on('close', ()=> {console.log('close call')});
+emit.emit('launch');
+emit.emit('close');
 
 
 
