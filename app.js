@@ -1,17 +1,25 @@
-var test = require('./emmiter');
+var EventEmmiter = require ('events');
+var uitls = require ('util');
+
+function Greetr () {
+    this.greeting = "hello world!"
+}
+
+uitls.inherits(Greetr,EventEmmiter);
+
+Greetr.prototype.greet = function (data) {
+    console.log (`${this.greeting}  : ${data}`); // using template literals
+    this.emit('greet',data);
+}
 
 
-var emit = new test();
+var greeter1 = new Greetr();
 
-emit.on('launch',function (){
-    console.log ('first call');
-})
+greeter1.on('greet',function (data){
+    console.log(`Someone greeted ${data}`);
+});
 
-emit.on('launch', ()=> {console.log('second call')});
-emit.on('close', ()=> {console.log('close call')});
-emit.emit('launch');
-emit.emit('close');
-
-
+greeter1.greet('coooooooling');
+console.log(`${function () {retrun 3}}`);
 
 
