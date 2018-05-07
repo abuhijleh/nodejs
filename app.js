@@ -1,4 +1,4 @@
-var EventEmmiter = require ('events');
+/*var EventEmmiter = require ('events');
 var uitls = require ('util');
 
 function Greetr () {
@@ -20,6 +20,29 @@ greeter1.on('greet',function (data){
 });
 
 greeter1.greet('coooooooling');
-console.log(`${function () {retrun 3}}`);
+console.log(`${function () {}}`);*/
+
+'use strict';
+
+class Person {
+    constructor (firstname,lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
+    greet() {
+        console.log (`hello ${this.firstname} ${this.lastname}`)
+    }
+}
+
+
+var john = new Person ('john','Doe');
+var jane = new Person ('jane', 'Doe');
+
+john.greet();
+jane.greet();
+
+console.log(john._proto__);
+console.log(jane._proto__);
 
 
