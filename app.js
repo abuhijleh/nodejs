@@ -22,7 +22,7 @@ greeter1.on('greet',function (data){
 greeter1.greet('coooooooling');
 console.log(`${function () {}}`);*/
 
-'use strict';
+/*'use strict';
 
 class Person {
     constructor (firstname,lastname) {
@@ -43,6 +43,8 @@ john.greet();
 jane.greet();
 
 console.log(john._proto__);
-console.log(jane._proto__);
+console.log(jane._proto__);*/
+
+response.end('test');
 
 
