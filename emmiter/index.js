@@ -1,18 +1,16 @@
-function Emitter () {
-    this.events = {};
+'use strict';
+
+var util = require('util');
+var EventEmitter = require('events');
+
+module.exports = class Greetr extends EventEmitter{
+    constructor() {
+        super();
+    }
+
+    greet(data) {
+        console.log(`hello ${data}`);
+        this.emit('greet',data)
+    }
 }
 
-Emitter.prototype.on = function(type,listener){
-    this.events[type]=this.events[type] || [];
-    this.events[type].push(listener);
-};
-
-Emitter.prototype.emit = function (type){
-    if (this.events[type]) {
-        this.events[type].forEach(element => {
-            element();
-        });
-    }   
-}
-
-module.exports = Emitter;
