@@ -1,1 +1,2 @@
-response.end(`hello world`);
+
+response.end('test');
